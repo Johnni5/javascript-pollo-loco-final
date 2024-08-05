@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: audio.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: audio.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>let audioFiles = [
+  {
+    name: "walking",
+    path: "./audio/character_walking.mp3",
+    loop: false,
+    volume: 0.3,
+    playbackrate: 4,
+  },
+
+  {
+    name: "jumping",
+    path: "./audio/character_jumping.mp3",
+    loop: false,
+    volume: 0.3,
+    playbackrate: 1,
+  },
+  {
+    name: "throwing",
+    path: "./audio/bottle_throw.mp3",
+    loop: false,
+    volume: 0.3,
+    playbackrate: 1,
+  },
+
+  {
+    name: "bottlebreaking",
+    path: "./audio/glass_shattering.mp3",
+    loop: false,
+    volume: 0.3,
+    playbackrate: 1,
+  },
+
+  {
+    name: "getItem",
+    path: "./audio/bottle_took.mp3",
+    loop: false,
+    volume: 0.3,
+    playbackrate: 1,
+  },
+
+  {
+    name: "bossHurt",
+    path: "./audio/chicken_boss.mp3",
+    loop: false,
+    volume: 0.3,
+    playbackrate: 1,
+  },
+
+  {
+    name: "bossDead",
+    path: "./audio/chicken_boss_music.mp3",
+    loop: false,
+    volume: 0.5,
+    playbackrate: 1,
+  },
+  {
+    name: "winGame",
+    path: "./audio/winning_short.mp3",
+    loop: false,
+    volume: 0.5,
+    playbackrate: 1,
+  },
+  {
+    name: "looseGame",
+    path: "./audio/loosing_short.mp3",
+    loop: false,
+    volume: 0.5,
+    playbackrate: 1,
+  },
+  {
+    name: "chickenKill",
+    path: "./audio/chicken_dying.mp3",
+    loop: false,
+    volume: 0.3,
+    playbackrate: 2,
+  },
+  {
+    name: "pepeHurt",
+    path: "./audio/character_hurt.mp3",
+    loop: false,
+    volume: 0.3,
+    playbackrate: 1,
+  },
+  {
+    name: "menuLoop",
+    path: "./audio/pollo_loco_OST.mp3",
+    loop: true,
+    volume: 0.3,
+    playbackrate: 1,
+  },
+];
+let muteIntro = false;
+let isMuted = false;
+let audioElements = {};
+
+/**
+ * Plays an audio file with the specified name, loading it if not already in cache.
+ * @function
+ * @param {string} name - The name of the audio file to be played.
+ * @throws {Error} Throws an error if the audio file is not found or cannot be loaded.
+ */
+function playAudio(name) {
+
+  if (!audioElements[name]) {
+    let file = audioFiles.find((file) => file.name === name);
+    if (file) {
+      audioElements[name] = new Audio(file.path);
+      audioElements[name].loop = file.loop;
+      audioElements[name].volume = file.volume;
+      audioElements[name].playbackRate = file.playbackrate;
+    } else {
+      console.error(`Data can not be found: ${name}`);
+      return;
+    }
+  }
+  if (!isMuted) {
+    audioElements[name].play();
+  }
+}
+
+/**
+ * Mutes all audio elements by setting their volume to zero and updating mute buttons.
+ */
+function muteAudio() {
+  isMuted = true;
+  let mobileBtn = document.getElementById("muteBtnMobile");
+  let Btn = document.getElementById("muteBtn");
+  mobileBtn.classList.add("active");
+  Btn.classList.add("active");
+  Object.values(audioElements).forEach((audio) => {
+    audio.volume = 0;
+  });
+}
+/**
+ * Unmutes all audio elements by setting their volume to maximum and updating unmute buttons.
+ */
+function unMuteAudio() {
+  isMuted = false;
+  let mobileBtn = document.getElementById("muteBtnMobile");
+  let Btn = document.getElementById("muteBtn");
+  mobileBtn.classList.remove("active");
+  Btn.classList.remove("active");
+  Object.values(audioElements).forEach((audio) => {
+    audio.volume = 1;
+  });
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#checkScreen">checkScreen</a></li><li><a href="global.html#closeControlInfo">closeControlInfo</a></li><li><a href="global.html#closeFullscreen">closeFullscreen</a></li><li><a href="global.html#fullscreen">fullscreen</a></li><li><a href="global.html#gameOverScreen">gameOverScreen</a></li><li><a href="global.html#handleResize">handleResize</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#muteAudio">muteAudio</a></li><li><a href="global.html#playAudio">playAudio</a></li><li><a href="global.html#removeFullscreenOption">removeFullscreenOption</a></li><li><a href="global.html#setStoppableIntervall">setStoppableIntervall</a></li><li><a href="global.html#showControlInfo">showControlInfo</a></li><li><a href="global.html#showFullscreenOption">showFullscreenOption</a></li><li><a href="global.html#startGame">startGame</a></li><li><a href="global.html#stopAudio">stopAudio</a></li><li><a href="global.html#stopGame">stopGame</a></li><li><a href="global.html#unMuteAudio">unMuteAudio</a></li><li><a href="global.html#win">win</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Thu Jul 18 2024 19:47:37 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

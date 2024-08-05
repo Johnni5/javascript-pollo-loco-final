@@ -1,0 +1,104 @@
+@media (max-width: 900px) {
+  canvas {
+    width: 100%;
+  }
+
+  #gameOverScreen {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #e9e5e5;
+  }
+
+  .screen {
+    width: 80%;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #gameOverScreen {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #e9e5e5;
+  }
+
+  .screen {
+    width: 80%;
+    background-repeat: no-repeat;
+  }
+
+  #panel {
+    margin-top: 320px;
+    gap: 280px;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+  #rotate-screen {
+    display: none;
+  }
+
+  .hidden {
+    display: block;
+    width: 50%;
+    height: auto;
+  }
+
+  .contentCanvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  #canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  
+  #panel {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    bottom: 0;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: end;
+    margin-left: 0;
+  }
+
+  #fullscreenContainer {
+    display: contents;
+  }
+
+  .fullscreenButton {
+    display: none;
+  }
+
+  .arrowSelector {
+    display: none;
+  }
+
+  .screen {
+    width: 100%;
+    height: 100%;
+  }
+  #startButton {
+    margin-top: 30%;
+  }
+
+  .panelWrapper {
+    gap: 15px;
+    display: flex;
+  }
+
+  .leftpannel {
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
+
+  .rightpannel {
+    margin-right: 30px;
+    margin-bottom: 10px;
+  }
+}

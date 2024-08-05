@@ -1,0 +1,119 @@
+/* General mobile styles for screens with max-width 1024px */
+@media (max-width: 1024px) {
+  .mobile-control {
+    display: none;
+  }
+}
+
+/* Styles for screens with max-width 917px and landscape orientation */
+@media (max-width: 917px) and (orientation: landscape) {
+  .mobile-control {
+    /* display: unset;
+    display: flex;
+    flex-direction: column; */
+    justify-content: space-around;
+    width: 83%;
+    position: absolute;
+    /* left: 80px; */
+    top: 170px;
+    z-index: 999;
+    margin-top: 134px;
+  }
+  .main-container {
+    width: 65%;
+    height: 100%;
+  }
+  canvas {
+    width: 70%;
+  }
+
+  h1 {
+    display: none;
+  }
+  .showCollectedItems {
+    display: none !important;
+  }
+}
+
+@media (max-width: 812px) and (orientation: landscape)  {
+  .mobile-control {
+    top: 145px;
+  }
+
+  .info {
+    width: 50%;
+    height: 90%;
+  }
+}
+
+@media (min-width:400px) and (max-width: 860px)  {
+  .mobile-control {
+    display: none;
+  }
+}
+
+/* Styles for screens with max-width 795px */
+@media (max-width: 795px) {
+  .mobile-control {
+    top: 100px;
+    z-index: 999;
+  }
+  .main-container {
+    width: 61%;
+  }
+}
+
+/* Styles for screens with max-width 667px and landscape orientation */
+@media (max-width: 667px) and (orientation: landscape) {
+  .mobile-control {
+    display: flex;
+    flex-direction: column;
+    top: 140px;
+  }
+  .button-container {
+    top: 32px;
+  }
+  .main-container {
+    width: 81%;
+  }
+}
+
+/* Styles for screens with max-width 480px */
+@media (max-width: 480px) {
+  .mobile-control {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Styles for screens with max-height 480px */
+@media (max-height: 480px) {
+  .mobile-control {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Styles for screens with max-height 475px */
+@media (max-height: 475px) {
+  .mobile-control {
+    display: flex;
+    flex-direction: column;
+    margin-top: 126px;
+  }
+}
+
+/* Styles for screens with max-width 340px */
+@media (max-width: 340px) {
+  .mobile-control {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Styles for screens with max-width 320px */
+@media (max-width: 320px) and (orientation: landscape){
+  .mobile-control {
+    top: 99px;
+  }
+}
